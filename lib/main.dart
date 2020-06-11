@@ -1,3 +1,7 @@
+import 'package:Capstone_Code/pages/emotionForm_page.dart';
+import 'package:Capstone_Code/pages/form_complete_page.dart';
+import 'package:Capstone_Code/pages/home_page.dart';
+import 'package:Capstone_Code/widgets/test_form.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,24 +13,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      initialRoute: '/home',
+      routes: {
+        '/home': (context) => HomePage(),
+        '/form': (context) => EmotionForm(),
+        '/form_complete': (context) => FormCompletePage()
+//        '/intervention': (context) => InterventionPage()
+      },
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-        // This makes the visual density adapt to the platform that you run
-        // the app on. For desktop platforms, the controls will be smaller and
-        // closer together (more dense) than on mobile platforms.
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+          brightness: Brightness.dark, primaryColor: Colors.cyan[800]),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -102,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headline,
             ),
           ],
         ),
