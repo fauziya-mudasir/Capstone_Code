@@ -1,4 +1,4 @@
-import 'package:Capstone_Code/widgets/form_layout.dart';
+import 'package:Capstone_Code/widgets/drawer_widget.dart';
 import 'package:Capstone_Code/widgets/home_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +20,7 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
           title: const Text("Analytics"),
         ),
+        drawer: DrawerWidget(),
 //        drawer: DrawerWidget(),
         body: HomeScreen(),
         bottomNavigationBar: BottomAppBar(

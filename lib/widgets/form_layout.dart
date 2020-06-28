@@ -348,15 +348,25 @@ class _FormLayoutState extends State<FormLayout> {
         _goTo(currentStep + 1);
         
       }else{
-        if(questionsAnswered != numQuestions){
+        if (numQuestions > questionsAnswered) {
           Scaffold.of(context).showSnackBar(SnackBar(
               backgroundColor: Colors.blueGrey[900],
               content: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Icon(Icons.close, color: Colors.red, size: 60.0,),
-                  SizedBox(width: 20,),
-                  Expanded(child: Text("please fill in all the hearts by answering all questions", style: TextStyle(color: Colors.red, fontSize: 16),)),
+                  Icon(
+                    Icons.close,
+                    color: Colors.red,
+                    size: 60.0,
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Expanded(
+                      child: Text(
+                    "please fill in all the hearts by answering all questions",
+                    style: TextStyle(color: Colors.red, fontSize: 16),
+                  )),
                 ],
               )));
         } else if (_formKey.currentState.validate()) {

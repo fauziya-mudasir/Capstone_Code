@@ -7,15 +7,15 @@ milestones.
 
 
 ## TODO's
-- [ ] Clean up navigation sequence.
-- [ ] Add an app drawer.
-- [ ] Add analytics page.
-- [ ] Add interventions page.
+- [x] Clean up navigation sequence.
+- [x] Add an app drawer.
+- [x] Add analytics page.
+- [x] Add interventions page.
 - [ ] Improve home page.
 
 ## Issues
-- [ ] None
-- [x] Navigation sequence for form filling (home -> form -> complete -> home) adds to stack without popping from stack.
+- [x] None
+- [ ] Navigation sequence for form filling (home -> form -> complete -> home) adds to stack without popping from stack.
 
 
 ## current status
