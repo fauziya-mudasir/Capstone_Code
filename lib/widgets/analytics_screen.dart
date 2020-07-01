@@ -1,4 +1,4 @@
-import 'package:Capstone_Code/app/column_labels.dart';
+import 'package:Capstone_Code/app/labels.dart';
 import 'package:Capstone_Code/widgets/pie_chart_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

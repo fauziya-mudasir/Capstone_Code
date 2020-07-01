@@ -11,11 +11,16 @@ milestones.
 - [x] Add an app drawer.
 - [x] Add analytics page.
 - [x] Add interventions page.
-- [ ] Improve home page.
+- [x] Improve home page.
+- [ ] Implement interventions page.
+- [ ] Design new home page.
+- [ ] Design and implement doctor page.
 
 ## Issues
 - [x] None
 - [ ] Navigation sequence for form filling (home -> form -> complete -> home) adds to stack without popping from stack.
+- [ ] Form validation is not as accurate as should be. (has unknown side effects)
+        : Form validation method relies on accumulator.
 
 
 ## current status

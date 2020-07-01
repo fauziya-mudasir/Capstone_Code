@@ -1,5 +1,3 @@
-import 'package:Capstone_Code/app/column_labels.dart';
-import 'package:Capstone_Code/widgets/pie_chart_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -19,15 +17,17 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Container(
         padding: EdgeInsets.all(8),
         child: Center(
-          child: ListView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              Row(
-                children: <Widget>[
-                  FlatButton(onPressed: null, child: Text('Test')),
-                  FlatButton(onPressed: null, child: Text('Analytics')),
-                ],
+              Icon(
+                Icons.accessibility_new,
+                size: 150,
               ),
-              FlatButton(onPressed: null, child: Text('Interventions')),
+              Text(
+                'Hey there',
+                textScaleFactor: 1.5,
+              )
             ],
           ),
         ),

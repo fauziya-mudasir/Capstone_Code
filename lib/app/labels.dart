@@ -21,4 +21,11 @@ const String columnDate = 'date';
 const String groupColumnCount = 'groupColumnCount';
 const String groupColumnName = 'groupColumnName';
 
-// ================= Expense class =================
+// ================= Route Names =================
+
+const String homeRoute = '/home';
+const String formRoute = '/form';
+const String formCompleteRoute = '/form_complete';
+const String analyticsRoute = '/analytics';
+const String interventionsRoute = '/interventions';
+const String doctorRoute = '/doctor';

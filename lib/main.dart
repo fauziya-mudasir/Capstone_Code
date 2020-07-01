@@ -1,3 +1,4 @@
+import 'package:Capstone_Code/app/labels.dart';
 import 'package:Capstone_Code/pages/analytics_page.dart';
 import 'package:Capstone_Code/pages/doctor_page.dart';
 import 'package:Capstone_Code/pages/emotionForm_page.dart';
@@ -18,12 +19,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       initialRoute: '/home',
       routes: {
-        '/home': (context) => HomePage(),
-        '/form': (context) => EmotionForm(),
-        '/form_complete': (context) => FormCompletePage(),
-        '/interventions': (context) => InterventionPage(),
-        '/doctor': (context) => DoctorPage(),
-        '/analytics': (context) => AnalyticsPage(),
+        homeRoute: (context) => HomePage(),
+        formRoute: (context) => EmotionForm(),
+        formCompleteRoute: (context) => FormCompletePage(),
+        interventionsRoute: (context) => InterventionPage(),
+        doctorRoute: (context) => DoctorPage(),
+        analyticsRoute: (context) => AnalyticsPage(),
       },
       theme: ThemeData(
           brightness: Brightness.dark, primaryColor: Colors.cyan[800]),

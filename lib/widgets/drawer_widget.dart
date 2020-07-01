@@ -1,3 +1,4 @@
+import 'package:Capstone_Code/app/labels.dart';
 import 'package:flutter/material.dart';
 
 class DrawerWidget extends StatelessWidget {
@@ -23,17 +24,17 @@ class DrawerWidget extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.favorite),
             title: Text('Interventions'),
-            onTap: () => Navigator.pushNamed(context, '/interventions'),
+            onTap: () => Navigator.pushNamed(context, interventionsRoute),
           ),
           ListTile(
             leading: Icon(Icons.pie_chart),
             title: Text('Analytics'),
-            onTap: () => Navigator.pushNamed(context, '/analytics'),
+            onTap: () => Navigator.pushNamed(context, analyticsRoute),
           ),
           ListTile(
             leading: Icon(Icons.local_hospital),
             title: Text('Doctor'),
-            onTap: () => Navigator.pushNamed(context, '/doctor'),
+            onTap: () => Navigator.pushNamed(context, doctorRoute),
           ),
         ],
       ),
