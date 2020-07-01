@@ -31,12 +31,18 @@ class _FormCompletePageState extends State<FormCompletePage> {
                   height: 60,
                   minWidth: 100,
                   child: FlatButton(
-                    onPressed: () => Navigator.pushNamed(context, '/home'),
+                    onPressed: () => Navigator.of(context)
+                        .popUntil((route) => route.isFirst),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(36.0),
                     ),
                     color: Colors.green[500],
-                    child: Text('Success!', style: TextStyle(fontSize: 30,),),
+                    child: Text(
+                      'Success!',
+                      style: TextStyle(
+                        fontSize: 30,
+                      ),
+                    ),
                   ),
                 ),
 //                SizedBox(height: 200,)

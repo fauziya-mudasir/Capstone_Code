@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:Capstone_Code/app/column_labels.dart';
+import 'package:Capstone_Code/app/labels.dart';
 import 'package:Capstone_Code/db_handler/models/emotional_state_model.dart';
 import 'package:Capstone_Code/db_handler/models/group_count_model.dart';
 import 'package:path/path.dart';

@@ -1,10 +1,9 @@
+import 'package:Capstone_Code/app/labels.dart';
 import 'package:Capstone_Code/db_handler/handlers/db_handler.dart';
 import 'package:Capstone_Code/db_handler/models/emotional_state_model.dart';
 import 'package:Capstone_Code/widgets/question_form_feild.dart';
-import 'package:Capstone_Code/widgets/question_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:grouped_buttons/grouped_buttons.dart';
 
 class FormLayout extends StatefulWidget {
   @override
@@ -16,16 +15,77 @@ class _FormLayoutState extends State<FormLayout> {
 
   static final List<String> categories = ["Food", "Health", "miscellaneous"];
   static final List<String> feelings = ['Sad', 'Irritable', 'Happy', 'Angry', 'Elated', 'Calm', 'Anxious', 'Energetic', 'Restless'];
-  static final List<String> upTos = ['Work', 'Class', 'Assignments', 'Projects', 'Meetings', 'Errands', 'Chores', 'Socialisation', 'Other'];
-  static final List<String> sleeps = ['Excellent', 'Great', 'Good', 'Bad', 'Restless'];
+  static final List<String> upTos = [
+    'Work',
+    'Class',
+    'Assignments',
+    'Projects',
+    'Meetings',
+    'Errands',
+    'Chores',
+    'Socialisation',
+    'Other'
+  ];
+  static final List<String> sleeps = [
+    'Excellent',
+    'Great',
+    'Good',
+    'Bad',
+    'Restless'
+  ];
   static final List<String> medications = ['Yes', 'No'];
-  static final List<String> anxieties = ['Extremely', 'Severely', 'Mildly', 'Low'];
-  static final List<String> stresses = ['Extremely', 'Severely', 'Mildly', 'Low'];
-  static final List<String> copings = ['Reading', 'Socialisation', 'Cooking', 'Music', 'Impulse spending', 'Sex', 'Alcohol', 'Isolation', 'Substance use', 'Other'];
-  static final List<String> productivity = ['Productive', 'Motivated', 'Focused', 'Unfocused', 'Distracted', 'Unproductive'];
-  static final List<String> suicide = ['Extremely', 'Severely', 'Mildly', 'Low'];
+  static final List<String> anxieties = [
+    'Extremely',
+    'Severely',
+    'Mildly',
+    'Low'
+  ];
+  static final List<String> stresses = [
+    'Extremely',
+    'Severely',
+    'Mildly',
+    'Low'
+  ];
+  static final List<String> copings = [
+    'Reading',
+    'Socialisation',
+    'Cooking',
+    'Music',
+    'Impulse spending',
+    'Sex',
+    'Alcohol',
+    'Isolation',
+    'Substance use',
+    'Other'
+  ];
+  static final List<String> productivity = [
+    'Productive',
+    'Motivated',
+    'Focused',
+    'Unfocused',
+    'Distracted',
+    'Unproductive'
+  ];
+  static final List<String> suicide = [
+    'Extremely',
+    'Severely',
+    'Mildly',
+    'Low'
+  ];
   static final List<String> harms = ['Extremely', 'Severely', 'Mildly', 'Low'];
 
+  List<bool> answered = [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ];
 
   String _feeling = '';
   String _upto = '';
@@ -51,7 +111,6 @@ class _FormLayoutState extends State<FormLayout> {
   }
 
   stepperForm(){
-
     List<Step> steps = [
       Step(
           title: (_feeling != '' && _upto != '')?  Icon(Icons.favorite, color: Colors.red,) : Icon(Icons.favorite_border,color: Colors.red,),
@@ -68,6 +127,7 @@ class _FormLayoutState extends State<FormLayout> {
                     setState(() {
                       _feeling = target;
                       questionsAnswered += 1;
+                      answered[0] = true;
                     });
                   },
                   onSaved: (target){
@@ -90,6 +150,7 @@ class _FormLayoutState extends State<FormLayout> {
                     setState(() {
                       _upto = target;
                       questionsAnswered += 1;
+                      answered[1] = true;
                     });
                   },
                   onSaved: (target){
@@ -123,6 +184,7 @@ class _FormLayoutState extends State<FormLayout> {
                     setState(() {
                       _sleep = target;
                       questionsAnswered += 1;
+                      answered[2] = true;
                     });
                   },
                   onSaved: (target){
@@ -145,6 +207,7 @@ class _FormLayoutState extends State<FormLayout> {
                     setState(() {
                       _medication = target;
                       questionsAnswered += 1;
+                      answered[3] = true;
                     });
                   },
                   onSaved: (target){
@@ -177,6 +240,7 @@ class _FormLayoutState extends State<FormLayout> {
                     setState(() {
                       _anxiety = target;
                       questionsAnswered += 1;
+                      answered[4] = true;
                     });
                   },
                   onSaved: (target){
@@ -199,6 +263,7 @@ class _FormLayoutState extends State<FormLayout> {
                     setState(() {
                       _stress = target;
                       questionsAnswered += 1;
+                      answered[5] = true;
                     });
                   },
                   onSaved: (target){
@@ -231,6 +296,7 @@ class _FormLayoutState extends State<FormLayout> {
                     setState(() {
                       _coping = target;
                       questionsAnswered += 1;
+                      answered[6] = true;
                     });
                   },
                   onSaved: (target){
@@ -263,6 +329,7 @@ class _FormLayoutState extends State<FormLayout> {
                     setState(() {
                       _productivity = target;
                       questionsAnswered += 1;
+                      answered[7] = true;
                     });
                   },
                   onSaved: (target){
@@ -294,6 +361,7 @@ class _FormLayoutState extends State<FormLayout> {
                       setState(() {
                         _suicide = target;
                         questionsAnswered += 1;
+                        answered[8] = true;
                       });
                     },
                     onSaved: (target){
@@ -316,6 +384,7 @@ class _FormLayoutState extends State<FormLayout> {
                       setState(() {
                         _harm = target;
                         questionsAnswered += 1;
+                        answered[9] = true;
                       });
                     },
                     onSaved: (target){
@@ -338,37 +407,59 @@ class _FormLayoutState extends State<FormLayout> {
 
     _goTo(int newStep){
       setState(() {
-          currentStep = newStep;
+        currentStep = newStep;
       });
     }
 
     next() {
 //      _formKey.currentState.save();
-      if(currentStep != steps.length - 1){
+      if (currentStep != steps.length - 1) {
         _goTo(currentStep + 1);
-        
-      }else{
-        if(questionsAnswered != numQuestions){
+      }
+      else {
+        if (answered.any((test) => test == false)) {
           Scaffold.of(context).showSnackBar(SnackBar(
               backgroundColor: Colors.blueGrey[900],
               content: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Icon(Icons.close, color: Colors.red, size: 60.0,),
-                  SizedBox(width: 20,),
-                  Expanded(child: Text("please fill in all the hearts by answering all questions", style: TextStyle(color: Colors.red, fontSize: 16),)),
+                  Icon(
+                    Icons.close,
+                    color: Colors.red,
+                    size: 60.0,
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Expanded(
+                      child: Text(
+                        "please fill in all the hearts by answering all questions",
+                        style: TextStyle(color: Colors.red, fontSize: 16),
+                      )),
                 ],
               )));
-        } else if (_formKey.currentState.validate()) {
+        }
+        else if (_formKey.currentState.validate()) {
           setState(() {
             _formKey.currentState.save();
             complete = true;
             var _now = DateTime.now();
-            var emotionalState = EmotionalState(_feeling, _upto, _sleep, _medication, _anxiety, _stress, _coping, _productivity, _suicide, _harm, _now);
+            var emotionalState = EmotionalState(
+                _feeling,
+                _upto,
+                _sleep,
+                _medication,
+                _anxiety,
+                _stress,
+                _coping,
+                _productivity,
+                _suicide,
+                _harm,
+                _now);
             DBHandler.handler.insert(emotionalState);
-          }) ;
+          });
 
-          Navigator.pushNamed(context, '/form_complete');
+          Navigator.pushNamed(context, formCompleteRoute);
         }
       }
     }
@@ -585,7 +676,6 @@ class _FormLayoutState extends State<FormLayout> {
                   _formKey.currentState.save();
                 });
                 if (_formKey.currentState.validate()) {
-
 //                        var expense = Expense(_itemName, _selectedCategory,
 //                            _cost, DateTime.now());
 //                        DBHandler.handler.insert(expense);
@@ -601,7 +691,6 @@ class _FormLayoutState extends State<FormLayout> {
   }
 
   formLayout() {
-
     return Form(
       key: _formKey,
       child: Container(
